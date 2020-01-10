@@ -10,7 +10,7 @@
     <RepositoryUrl>https://github.com/zhenlei520/System.Extension.Core</RepositoryUrl>
     <PackageProjectUrl>https://www.nuget.org/packages/EInfrastructure.Core.AliYun.Tbk/</PackageProjectUrl>
     <Copyright>Copyright ©zhenlei520 2020</Copyright>
-    <PackageIconUrl>https://secure.gravatar.com/avatar/932ca0f8eaf4df1aaf221f9a1a897569?s=512</PackageIconUrl>
+    <PackageIcon>https://secure.gravatar.com/avatar/932ca0f8eaf4df1aaf221f9a1a897569?s=512</PackageIcon>
     <Title>淘宝客帮助类库</Title>
     <PackageTags>tbk taobao</PackageTags>
   </PropertyGroup>

@@ -10,9 +10,17 @@
     <RepositoryUrl>https://github.com/zhenlei520/System.Extension.Core</RepositoryUrl>
     <PackageProjectUrl>https://www.nuget.org/packages/EInfrastructure.Core.Config.EntitiesExtensions/</PackageProjectUrl>
     <Copyright>Copyright ©zhenlei520 2019</Copyright>
-    <PackageIconUrl>https://secure.gravatar.com/avatar/932ca0f8eaf4df1aaf221f9a1a897569?s=512</PackageIconUrl>
+    <PackageIcon>https://secure.gravatar.com/avatar/932ca0f8eaf4df1aaf221f9a1a897569?s=512</PackageIcon>
     <Title>configuration</Title>
     <PackageTags>EInfrastructure.Core Configuration</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DocumentationFile>bin\Debug\EInfrastructure.Core.Config.EntitiesExtensions.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DocumentationFile>bin\Release\EInfrastructure.Core.Config.EntitiesExtensions.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
