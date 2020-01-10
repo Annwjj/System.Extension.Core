@@ -5,8 +5,8 @@ using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using EInfrastructure.Core.Config.EnumerationExtensions;
 using EInfrastructure.Core.Tools;
-using EInfrastructure.Core.Tools.Enumerations;
 using Microsoft.AspNetCore.Http;
 
 namespace EInfrastructure.Core.HelpCommon.Files

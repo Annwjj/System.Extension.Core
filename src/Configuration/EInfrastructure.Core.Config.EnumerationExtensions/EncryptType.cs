@@ -3,7 +3,7 @@
 
 using EInfrastructure.Core.Config.EntitiesExtensions.SeedWork;
 
-namespace EInfrastructure.Core.Tools.Enumerations
+namespace EInfrastructure.Core.Config.EnumerationExtensions
 {
     /// <summary>
     /// 加密方式

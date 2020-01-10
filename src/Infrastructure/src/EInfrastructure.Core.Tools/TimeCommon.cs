@@ -7,7 +7,6 @@ using System.Globalization;
 using System.Linq;
 using EInfrastructure.Core.Config.EnumerationExtensions;
 using EInfrastructure.Core.Config.ExceptionExtensions;
-using TimeType = EInfrastructure.Core.Tools.Enumerations.TimeType;
 
 namespace EInfrastructure.Core.Tools
 {
