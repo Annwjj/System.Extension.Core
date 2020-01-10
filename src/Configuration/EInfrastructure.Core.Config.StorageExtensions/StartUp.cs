@@ -2,6 +2,9 @@
 
 namespace EInfrastructure.Core.Config.StorageExtensions
 {
+    /// <summary>
+    ///
+    /// </summary>
     public static class StartUp
     {
         /// <summary>

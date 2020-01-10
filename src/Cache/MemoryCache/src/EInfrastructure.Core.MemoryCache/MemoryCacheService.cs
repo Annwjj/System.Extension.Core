@@ -374,7 +374,7 @@ namespace EInfrastructure.Core.MemoryCache
         /// </summary>
         /// <param name="count">指定清除指定数量的已过期的hashkey</param>
         /// <returns></returns>
-        public bool ClearOverTimeHashKey(long count = 1000l)
+        public bool ClearOverTimeHashKey(long count = 1000L)
         {
             return false;
         }
@@ -828,6 +828,12 @@ namespace EInfrastructure.Core.MemoryCache
             return new Task<long>(() => ListRightPush<T>(key, value));
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
         public Task<string> ListRightPopAsync(string key)
         {
             throw new NotImplementedException();
@@ -989,7 +995,7 @@ namespace EInfrastructure.Core.MemoryCache
         /// </summary>
         /// <param name="count"></param>
         /// <returns></returns>
-        public List<ValueTuple<string, string, string, string>> SortedSetRangeByRankAndOverTime(long count = 1000l)
+        public List<ValueTuple<string, string, string, string>> SortedSetRangeByRankAndOverTime(long count = 1000L)
         {
             return default(List<ValueTuple<string, string, string, string>>);
         }
@@ -1076,6 +1082,12 @@ namespace EInfrastructure.Core.MemoryCache
             return new Task<bool>(() => SortedSetRemove(key, value));
         }
 
+        /// <summary>
+        /// 获取全部
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
         public Task<List<string>> SortedSetRangeByRankAsync(string key, long count = 1000)
         {
             throw new NotImplementedException();
