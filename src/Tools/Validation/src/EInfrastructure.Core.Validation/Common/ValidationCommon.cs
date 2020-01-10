@@ -36,6 +36,25 @@ namespace EInfrastructure.Core.Validation.Common
             }
         }
 
+        /// <summary>
+        /// 检查验证
+        /// </summary>
+        /// <param name="entity">待检查的参数类</param>
+        /// <param name="msg">默认错误提示信息</param>
+        /// <param name="code">错误码</param>
+        /// <typeparam name="TEntity"></typeparam>
+        public static void Check<TEntity>(this TEntity entity, string msg = "参数异常", int? code = null)
+            where TEntity : IFluentlValidatorEntity
+        {
+            Tools.Check.True(entity != null, msg);
+            var validatotor = new ServiceProvider().GetService<IFluentlValidator<TEntity>>();
+            if (validatotor != null)
+            {
+                validatotor.Validate(entity)
+                    .Check(code);
+            }
+        }
+
         #endregion
 
         #region 检查验证
