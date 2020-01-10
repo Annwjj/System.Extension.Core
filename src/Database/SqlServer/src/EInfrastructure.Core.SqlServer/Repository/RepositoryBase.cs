@@ -21,7 +21,6 @@ namespace EInfrastructure.Core.SqlServer.Repository
         /// <param name="unitOfWork"></param>
         public RepositoryBase(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
-
         }
     }
 }

@@ -1,7 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>2.0.0</Version><PackageReleaseNotes>sqlserver2012以上数据库</PackageReleaseNotes>
+    <Authors>zhenlei520</Authors>
+    <Version>2.0.0</Version>
+    <PackageReleaseNotes>sqlserver2012以上数据库</PackageReleaseNotes>
     <Description>dotnet core 使用sqlserver数据库实现</Description>
     <Copyright>Copyright ©zhenlei520 2020</Copyright>
     <RepositoryUrl>https://github.com/zhenlei520/System.Extension.Core</RepositoryUrl>
@@ -21,12 +23,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.1"/>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Infrastructure\src\EInfrastructure.Core\EInfrastructure.Core.csproj" />
+    <ProjectReference Include="..\..\..\..\Infrastructure\src\EInfrastructure.Core\EInfrastructure.Core.csproj"/>
   </ItemGroup>
 
 </Project>

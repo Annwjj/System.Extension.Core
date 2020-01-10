@@ -10,7 +10,7 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("EInfrastructure.Core.SqlServer")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("zhenlei520")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright ©zhenlei520 2020")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("dotnet core 使用sqlserver数据库实现")]

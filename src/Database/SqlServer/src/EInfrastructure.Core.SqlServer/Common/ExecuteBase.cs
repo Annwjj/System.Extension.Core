@@ -116,7 +116,7 @@ namespace EInfrastructure.Core.SqlServer.Common
             {
                 conn.Close();
             }
-            
+
             return list;
         }
 
