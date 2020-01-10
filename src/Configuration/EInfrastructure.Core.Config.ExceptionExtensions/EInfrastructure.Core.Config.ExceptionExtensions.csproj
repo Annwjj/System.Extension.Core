@@ -6,25 +6,25 @@
     <Authors>zhenlei520</Authors>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Company>zhenlei520</Company>
-    <Description>dotnet core 基础类库</Description>
+    <Description>dotnet core 自定义异常配置</Description>
     <RepositoryUrl>https://github.com/zhenlei520/System.Extension.Core</RepositoryUrl>
     <PackageProjectUrl>https://www.nuget.org/packages/EInfrastructure.Core.Tools/</PackageProjectUrl>
     <Copyright>Copyright ©zhenlei520 2020</Copyright>
     <PackageIcon>https://secure.gravatar.com/avatar/932ca0f8eaf4df1aaf221f9a1a897569?s=512</PackageIcon>
-    <Title>基础类库</Title>
-    <PackageTags>EInfrastructure.Core.Tools EInfrastructure ECommon</PackageTags>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DocumentationFile>bin\Release\EInfrastructure.Core.Tools.xml</DocumentationFile>
+    <Title>自定义异常配置</Title>
+    <PackageTags>EInfrastructure.Core.Config.ExceptionExtensions EInfrastructure ECommon</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DocumentationFile>bin\Debug\EInfrastructure.Core.Tools.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\EInfrastructure.Core.Config.ExceptionExtensions.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DocumentationFile>bin\Release\EInfrastructure.Core.Config.ExceptionExtensions.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Configuration\EInfrastructure.Core.Config.ExceptionExtensions\EInfrastructure.Core.Config.ExceptionExtensions.csproj" />
+    <ProjectReference Include="..\EInfrastructure.Core.Config.EnumerationExtensions\EInfrastructure.Core.Config.EnumerationExtensions.csproj" />
   </ItemGroup>
 
 </Project>

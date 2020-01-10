@@ -24,12 +24,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\AutomationConfiguration\src\EInfrastructure.Core.AutomationConfiguration\EInfrastructure.Core.AutomationConfiguration.csproj"/>
-    <ProjectReference Include="..\..\..\..\Configuration\src\EInfrastructure.Core.Config.WordsExtensions\src\EInfrastructure.Core.Config.WordsExtensions\EInfrastructure.Core.Config.WordsExtensions.csproj"/>
-    <ProjectReference Include="..\..\..\..\Infrastructure\src\EInfrastructure.Core\EInfrastructure.Core.csproj"/>
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="Dict\Text\initial.txt">
       <Pack>true</Pack>
       <PackageCopyToOutput>true</PackageCopyToOutput>
@@ -90,6 +84,12 @@
       <PackageFlatten>true</PackageFlatten>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\AutomationConfiguration\src\EInfrastructure.Core.AutomationConfiguration\EInfrastructure.Core.AutomationConfiguration.csproj" />
+    <ProjectReference Include="..\..\..\..\Configuration\EInfrastructure.Core.Config.WordsExtensions\EInfrastructure.Core.Config.WordsExtensions.csproj" />
+    <ProjectReference Include="..\..\..\..\Infrastructure\src\EInfrastructure.Core\EInfrastructure.Core.csproj" />
   </ItemGroup>
 
 </Project>
