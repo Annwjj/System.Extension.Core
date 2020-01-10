@@ -6,7 +6,6 @@ using EInfrastructure.Core.Config.EnumerationExtensions;
 using EInfrastructure.Core.HelpCommon;
 using EInfrastructure.Core.Test.Base;
 using EInfrastructure.Core.Tools;
-using EInfrastructure.Core.Tools.Enumerations;
 using Xunit;
 using Xunit.Abstractions;
 

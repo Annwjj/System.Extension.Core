@@ -3,12 +3,12 @@
 
 using EInfrastructure.Core.Config.EntitiesExtensions.SeedWork;
 
-namespace EInfrastructure.Core.Tools.Enumerations
+namespace EInfrastructure.Core.Config.EnumerationExtensions
 {
     /// <summary>
     /// 生肖信息
     /// </summary>
-    public class Animal :Enumeration
+    public class Animal : Enumeration
     {
         /// <summary>
         /// 鼠
@@ -70,6 +70,11 @@ namespace EInfrastructure.Core.Tools.Enumerations
         /// </summary>
         public static Animal Boar = new Animal(11, "猪");
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
         public Animal(int id, string name) : base(id, name)
         {
         }

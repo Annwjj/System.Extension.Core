@@ -32,18 +32,7 @@ namespace EInfrastructure.Core.Tools.Files
                 using (FileStream fileStream =
                     new FileStream(localFilePath, FileMode.Open, FileAccess.Read))
                 {
-                    //计算文件的MD5值
-                    MD5 calculator = MD5.Create();
-                    Byte[] buffer = calculator.ComputeHash(fileStream);
-                    calculator.Clear();
-                    //将字节数组转换成十六进制的字符串形式
-                    StringBuilder stringBuilder = new StringBuilder();
-                    foreach (var t in buffer)
-                    {
-                        stringBuilder.Append(t.ToString("x2"));
-                    }
-
-                    hashMd5 = stringBuilder.ToString();
+                    hashMd5 = SecurityCommon.GetMd5Hash(fileStream, false);
                 }
             }
 
@@ -171,10 +160,10 @@ namespace EInfrastructure.Core.Tools.Files
 
         #endregion
 
-        #region 将文件转换成Base64格式
+        #region 将文件内容转换成Base64格式
 
         /// <summary>
-        /// 将文件转换成Base64格式
+        /// 将文件内容转换成Base64格式
         /// </summary>
         /// <param name="filePath">本地文件绝对地址</param>
         /// <returns></returns>
@@ -184,7 +173,7 @@ namespace EInfrastructure.Core.Tools.Files
         }
 
         /// <summary>
-        /// 将文件转换成Base64格式
+        /// 将文件内容转换成Base64格式
         /// </summary>
         /// <param name="filePath">本地文件绝对地址</param>
         /// <returns></returns>
@@ -194,7 +183,7 @@ namespace EInfrastructure.Core.Tools.Files
         }
 
         /// <summary>
-        /// 将文件转换成Base64格式
+        /// 将文件内容转换成Base64格式
         /// </summary>
         /// <param name="filePath">本地文件绝对地址</param>
         /// <param name="isSync">是否同步</param>
@@ -226,12 +215,12 @@ namespace EInfrastructure.Core.Tools.Files
 
         #endregion
 
-        #region 将文件转换为byte数组
+        #region 将文件内容转换为byte数组
 
-        #region 将文件转换成byte[]数组
+        #region 将文件内容转换为byte数组
 
         /// <summary>
-        /// 将文件转换成byte[]数组
+        /// 将文件内容转换成byte数组
         /// </summary>
         /// <param name="filePath">本地文件绝对地址</param>
         /// <returns>byte[]数组</returns>
@@ -241,7 +230,7 @@ namespace EInfrastructure.Core.Tools.Files
         }
 
         /// <summary>
-        /// 将文件转换成byte[]数组
+        /// 将文件内容转换成byte数组
         /// </summary>
         /// <param name="filePath">本地文件绝对地址</param>
         /// <returns>byte[]数组</returns>
@@ -251,7 +240,7 @@ namespace EInfrastructure.Core.Tools.Files
         }
 
         /// <summary>
-        /// 将文件转换成byte[]数组
+        /// 将文件内容转换成byte[]数组
         /// </summary>
         /// <param name="filePath">本地文件绝对地址</param>
         /// <param name="isSync">是否同步</param>
@@ -285,12 +274,12 @@ namespace EInfrastructure.Core.Tools.Files
 
         #endregion
 
-        #region 将byte[]数组保存成文件
+        #region 将byte数组保存成文件
 
         /// <summary>
-        /// 将byte[]数组保存成文件
+        /// 将byte数组保存成文件
         /// </summary>
-        /// <param name="byteArray">byte[]数组</param>
+        /// <param name="byteArray">byte数组</param>
         /// <param name="localFilePath">保存至硬盘的文件路径</param>
         /// <returns></returns>
         public static bool SaveByteToFile(byte[] byteArray, string localFilePath)
@@ -332,7 +321,7 @@ namespace EInfrastructure.Core.Tools.Files
         }
 
         /// <summary>
-        ///
+        /// 获取文件内容（支持换行读取）
         /// </summary>
         /// <param name="filePath">本地文件绝对地址</param>
         /// <param name="encoding">编码格式,默认为Encoding.Default</param>
@@ -393,7 +382,7 @@ namespace EInfrastructure.Core.Tools.Files
         /// <param name="filePath">本地文件绝对地址</param>
         /// <param name="encoding">编码格式,默认为Encoding.Default</param>
         /// <returns></returns>
-        private static async Task<List<string>> GetFileContentAsyncByLine(string filePath,
+        public static async Task<List<string>> GetFileContentAsyncByLine(string filePath,
             Encoding encoding = null)
         {
             return await GetFileContentByLine(filePath, false, encoding);

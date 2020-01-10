@@ -3,7 +3,7 @@
 
 using EInfrastructure.Core.Config.EntitiesExtensions.SeedWork;
 
-namespace EInfrastructure.Core.Tools.Enumerations
+namespace EInfrastructure.Core.Config.EnumerationExtensions
 {
     /// <summary>
     /// 时间类型
@@ -50,6 +50,11 @@ namespace EInfrastructure.Core.Tools.Enumerations
         /// </summary>
         public static TimeType EndYear = new TimeType(8, "年末");
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
         public TimeType(int id, string name) : base(id, name)
         {
         }

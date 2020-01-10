@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using EInfrastructure.Core.Config.EnumerationExtensions;
 using EInfrastructure.Core.Config.ExceptionExtensions;
+using EInfrastructure.Core.Tools.Systems;
 
 namespace EInfrastructure.Core.Tools
 {
@@ -108,7 +109,28 @@ namespace EInfrastructure.Core.Tools
         /// <param name="isUpper">是否转大写</param>
         public static string GetMd5HashBy16(string input, Encoding encoding = null, bool isUpper = true)
         {
-            return GetMd5Hash(input, true, encoding, isUpper);
+            return GetMd5Hash(encoding.Get().GetBytes(input), true, isUpper);
+        }
+
+        /// <summary>
+        /// Md5加密，返回16位结果
+        /// </summary>
+        /// <param name="stream">待加密字符串</param>
+        /// <param name="isUpper">是否转大写</param>
+        public static string GetMd5HashBy16(Stream stream, bool isUpper = true)
+        {
+            byte[] bytes = stream.ConvertToByteArray();
+            return GetMd5Hash(bytes, true, isUpper);
+        }
+
+        /// <summary>
+        /// Md5加密，返回16位结果
+        /// </summary>
+        /// <param name="bytes">待加密字符串</param>
+        /// <param name="isUpper">是否转大写</param>
+        public static string GetMd5HashBy16(byte[] bytes, bool isUpper = true)
+        {
+            return GetMd5Hash(bytes, true, isUpper);
         }
 
         /// <summary>
@@ -120,7 +142,28 @@ namespace EInfrastructure.Core.Tools
         /// <returns></returns>
         public static string GetMd5Hash(string input, Encoding encoding = null, bool isUpper = true)
         {
-            return GetMd5Hash(input, false, encoding, isUpper);
+            return GetMd5Hash(encoding.Get().GetBytes(input), false, isUpper);
+        }
+
+        /// <summary>
+        /// Md5加密，返回16位结果
+        /// </summary>
+        /// <param name="stream">待加密字符串</param>
+        /// <param name="isUpper">是否转大写</param>
+        public static string GetMd5Hash(Stream stream, bool isUpper = true)
+        {
+            byte[] bytes = stream.ConvertToByteArray();
+            return GetMd5Hash(bytes, false, isUpper);
+        }
+
+        /// <summary>
+        /// Md5加密，返回16位结果
+        /// </summary>
+        /// <param name="bytes">待加密字符串</param>
+        /// <param name="isUpper">是否转大写</param>
+        public static string GetMd5Hash(byte[] bytes, bool isUpper = true)
+        {
+            return GetMd5Hash(bytes, false, isUpper);
         }
 
         /// <summary>
@@ -128,18 +171,12 @@ namespace EInfrastructure.Core.Tools
         /// </summary>
         /// <param name="input">待加密字符串</param>
         /// <param name="is16">是否16位加密，是否32位加密</param>
-        /// <param name="encoding">编码方式</param>
         /// <param name="isUpper">是否转大写</param>
         /// <returns></returns>
-        private static string GetMd5Hash(string input, bool is16, Encoding encoding = null, bool isUpper = true)
+        private static string GetMd5Hash(byte[] input, bool is16, bool isUpper = true)
         {
-            if (encoding == null)
-            {
-                encoding = Encoding.UTF8;
-            }
-
             MD5 myMd5 = new MD5CryptoServiceProvider();
-            var signed = myMd5.ComputeHash(encoding.GetBytes(input));
+            var signed = myMd5.ComputeHash(input);
             string signResult = is16 ? GetSignResult(signed, 4, 8) : GetSignResult(signed);
             return isUpper ? signResult.ToUpper() : signResult.ToLower();
         }
