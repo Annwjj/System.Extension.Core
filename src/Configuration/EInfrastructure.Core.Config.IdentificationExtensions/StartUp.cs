@@ -2,6 +2,9 @@
 
 namespace EInfrastructure.Core.Config.IdentificationExtensions
 {
+    /// <summary>
+    ///
+    /// </summary>
     public static class StartUp
     {
         /// <summary>

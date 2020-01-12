@@ -28,6 +28,10 @@ namespace EInfrastructure.Core.BaiDu.ContentIdentification
         private readonly RestClient _restClient;
         private readonly RestRequest _request;
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="jsonProvider"></param>
         public AuthenticateDemoService(IJsonService jsonProvider)
         {
             _jsonProvider = jsonProvider;

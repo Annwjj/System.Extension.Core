@@ -1486,6 +1486,12 @@ namespace EInfrastructure.Core.Redis.Common
         {
             return WriteAsync(RedisCommands.Get(key));
         }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
 		public Task<byte[]> GetBytesAsync(string key) {
 			return WriteAsync(RedisCommands.GetBytes(key));
 		}
@@ -1788,7 +1794,7 @@ namespace EInfrastructure.Core.Redis.Common
         }
 
         /// <summary>
-        /// Suspend all the Redis clients for the specified amount of time 
+        /// Suspend all the Redis clients for the specified amount of time
         /// </summary>
         /// <param name="milliseconds">Time in milliseconds to suspend</param>
         /// <returns>Status code</returns>
@@ -1798,7 +1804,7 @@ namespace EInfrastructure.Core.Redis.Common
         }
 
         /// <summary>
-        /// Suspend all the Redis clients for the specified amount of time 
+        /// Suspend all the Redis clients for the specified amount of time
         /// </summary>
         /// <param name="timeout">Time to suspend</param>
         /// <returns>Status code</returns>

@@ -17,6 +17,9 @@ namespace EInfrastructure.Core.AliYun.Tbk
     /// </summary>
     public class OpenApi
     {
+        /// <summary>
+        ///
+        /// </summary>
         protected readonly IJsonService _jsonProvider;
 
         /// <summary>

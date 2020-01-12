@@ -14,6 +14,11 @@ namespace EInfrastructure.Core.Test
         {
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="num"></param>
+        /// <param name="s"></param>
         [Theory]
         [InlineData(1, 1)]
         public void ConvertToShort(int num, short s)

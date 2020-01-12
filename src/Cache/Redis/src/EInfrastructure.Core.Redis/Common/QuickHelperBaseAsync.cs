@@ -425,14 +425,14 @@ namespace EInfrastructure.Core.Redis.Common {
 		#endregion
 
 		#region Sorted Set 操作
-		/// <summary>
-		/// 向有序集合添加一个或多个成员，或者更新已存在成员的分数
-		/// </summary>
-		/// <typeparam name="TScore">分数类型</typeparam>
-		/// <param name="key">不含prefix前辍RedisHelper.Name</param>
-		/// <param name="memberScores">一个或多个成员分数</param>
-		/// <returns></returns>
-		async public static Task<long> ZAddAsync(string key, params (double, string)[] memberScores) {
+
+        /// <summary>
+        /// 向有序集合添加一个或多个成员，或者更新已存在成员的分数
+        /// </summary>
+        /// <param name="key">不含prefix前辍RedisHelper.Name</param>
+        /// <param name="memberScores">一个或多个成员分数</param>
+        /// <returns></returns>
+        async public static Task<long> ZAddAsync(string key, params (double, string)[] memberScores) {
 			key = string.Concat(Name, key);
 			using (var conn = await Instance.GetConnectionAsync()) {
 				return await conn.Client.ZAddAsync<double, string>(key, memberScores.Select(a => new Tuple<double, string>(a.Item1, a.Item2)).ToArray());

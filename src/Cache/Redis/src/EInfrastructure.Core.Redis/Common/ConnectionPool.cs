@@ -175,6 +175,9 @@ namespace EInfrastructure.Core.Redis.Common
         }
     }
 
+    /// <summary>
+    ///
+    /// </summary>
     public class RedisConnection2 : IDisposable
     {
         public RedisClient Client;

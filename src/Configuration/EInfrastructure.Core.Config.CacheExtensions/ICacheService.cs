@@ -145,6 +145,7 @@ namespace EInfrastructure.Core.Config.CacheExtensions
         /// <param name="dataKey"></param>
         /// <param name="t"></param>
         /// <param name="second">秒</param>
+        /// <param name="isSetHashKeyExpire"></param>
         /// <returns></returns>
         bool HashSet<T>(string key, string dataKey, T t, long second = -1L, bool isSetHashKeyExpire = true);
 
@@ -155,6 +156,7 @@ namespace EInfrastructure.Core.Config.CacheExtensions
         /// <param name="key"></param>
         /// <param name="kvalues"></param>
         /// <param name="second">秒</param>
+        /// <param name="isSetHashKeyExpire"></param>
         /// <returns></returns>
         bool HashSet<T>(string key, Dictionary<string, T> kvalues, long second = -1L, bool isSetHashKeyExpire = true);
 

@@ -2,6 +2,9 @@
 
 namespace EInfrastructure.Core.Config.WordsExtensions
 {
+    /// <summary>
+    ///
+    /// </summary>
     public static class StartUp
     {
         /// <summary>

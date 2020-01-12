@@ -186,6 +186,11 @@ namespace EInfrastructure.Core.Config.WordsExtensions.Enumerations
 
         #endregion
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
         public WordType(int id, string name) : base(id, name)
         {
         }

@@ -40,6 +40,7 @@ namespace EInfrastructure.Core.QiNiu.Storage.Auths
         /// </summary>
         /// <param name="logService"></param>
         /// <param name="qiNiuConfig"></param>
+        /// <param name="jsonService"></param>
         public ClaimQiNiuRequirementFilter(ILogService logService, QiNiuStorageConfig qiNiuConfig,
             IJsonService jsonService)
         {

@@ -2,6 +2,9 @@
 
 namespace EInfrastructure.Core.Config.CacheExtensions
 {
+    /// <summary>
+    ///
+    /// </summary>
     public static class StartUp
     {
         /// <summary>

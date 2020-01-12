@@ -9,6 +9,9 @@ using Newtonsoft.Json;
 
 namespace EInfrastructure.Core.Serialize.NewtonsoftJson
 {
+    /// <summary>
+    ///
+    /// </summary>
     public class NewtonsoftJsonProvider : IJsonProvider
     {
         #region 得到实现类唯一标示

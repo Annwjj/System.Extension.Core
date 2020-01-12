@@ -330,6 +330,7 @@ namespace EInfrastructure.Core.MemoryCache
         /// <param name="dataKey"></param>
         /// <param name="t"></param>
         /// <param name="second"></param>
+        /// <param name="isSetHashKeyExpire"></param>
         /// <returns></returns>
         public bool HashSet<T>(string key, string dataKey, T t, long second = -1L, bool isSetHashKeyExpire = true)
         {
@@ -347,6 +348,7 @@ namespace EInfrastructure.Core.MemoryCache
         /// <param name="key"></param>
         /// <param name="kvalues"></param>
         /// <param name="second">秒</param>
+        /// <param name="isSetHashKeyExpire"></param>
         /// <returns></returns>
         public bool HashSet<T>(string key, Dictionary<string, T> kvalues, long second = -1L,
             bool isSetHashKeyExpire = true)
@@ -359,6 +361,7 @@ namespace EInfrastructure.Core.MemoryCache
         /// </summary>
         /// <param name="kValues"></param>
         /// <param name="second"></param>
+        /// <param name="isSetHashKeyExpire"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         public bool HashSet<T>(Dictionary<string, Dictionary<string, T>> kValues, long second = -1,
@@ -455,6 +458,11 @@ namespace EInfrastructure.Core.MemoryCache
             return null;
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="keys"></param>
+        /// <returns></returns>
         public Dictionary<string, Dictionary<string, string>> HashGet(Dictionary<string, string[]> keys)
         {
             return null;
@@ -669,6 +677,13 @@ namespace EInfrastructure.Core.MemoryCache
             return 0;
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
         public List<string> ListRange(string key, long count = 1000)
         {
             throw new NotImplementedException();
@@ -704,6 +719,12 @@ namespace EInfrastructure.Core.MemoryCache
             return 0;
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
         public string ListRightPop(string key)
         {
             throw new NotImplementedException();
@@ -793,6 +814,13 @@ namespace EInfrastructure.Core.MemoryCache
             return new Task<long>(() => ListRemove(key, value));
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
         public Task<List<string>> ListRangeAsync(string key, long count = 1000)
         {
             throw new NotImplementedException();
@@ -870,6 +898,12 @@ namespace EInfrastructure.Core.MemoryCache
             return new Task<long>(() => ListLeftPush<T>(key, value));
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
         public Task<string> ListLeftPopAsync(string key)
         {
             throw new NotImplementedException();
@@ -944,6 +978,13 @@ namespace EInfrastructure.Core.MemoryCache
             return false;
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
         public List<string> SortedSetRangeByRank(string key, long count = 1000)
         {
             throw new NotImplementedException();
@@ -981,6 +1022,14 @@ namespace EInfrastructure.Core.MemoryCache
             return default(List<T>);
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="fromRank"></param>
+        /// <param name="toRank"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
         public List<string> GetRangeFromSortedSet(string key, long fromRank, long toRank)
         {
             throw new NotImplementedException();

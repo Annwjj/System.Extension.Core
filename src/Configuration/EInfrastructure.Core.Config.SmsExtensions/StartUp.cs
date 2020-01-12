@@ -2,6 +2,9 @@
 
 namespace EInfrastructure.Core.Config.SmsExtensions
 {
+    /// <summary>
+    ///
+    /// </summary>
     public static class StartUp
     {
         /// <summary>

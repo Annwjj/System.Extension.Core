@@ -292,6 +292,7 @@ namespace EInfrastructure.Core.Redis
         /// </summary>
         /// <param name="kValues"></param>
         /// <param name="second"></param>
+        /// <param name="isSetHashKeyExpire"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         public bool HashSet<T>(Dictionary<string, Dictionary<string, T>> kValues, long second = -1,
@@ -386,7 +387,6 @@ namespace EInfrastructure.Core.Redis
         /// <summary>
         /// 从hash表获取数据
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="key"></param>
         /// <param name="dataKey"></param>
         /// <returns></returns>
@@ -400,7 +400,6 @@ namespace EInfrastructure.Core.Redis
         /// <summary>
         /// 从hash表获取数据
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="key"></param>
         /// <param name="dataKeys"></param>
         /// <returns></returns>
@@ -564,7 +563,6 @@ namespace EInfrastructure.Core.Redis
         /// <summary>
         /// 从hash表获取数据
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="key"></param>
         /// <param name="dataKey"></param>
         /// <returns></returns>
@@ -602,7 +600,6 @@ namespace EInfrastructure.Core.Redis
         /// <summary>
         /// 获取hashkey所有Redis key
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="key"></param>
         /// <returns></returns>
         public async Task<List<string>> HashKeysAsync(string key)
@@ -661,6 +658,7 @@ namespace EInfrastructure.Core.Redis
         /// 入队
         /// </summary>
         /// <param name="key"></param>
+        /// <param name="value"></param>
         /// <returns></returns>
         public long ListRightPush<T>(string key, T value)
         {
@@ -672,7 +670,6 @@ namespace EInfrastructure.Core.Redis
         /// <summary>
         /// 出队
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="key"></param>
         /// <returns></returns>
         public string ListRightPop(string key)
@@ -793,7 +790,6 @@ namespace EInfrastructure.Core.Redis
         /// <summary>
         /// 出队
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="key"></param>
         /// <returns></returns>
         public async Task<string> ListRightPopAsync(string key)
@@ -831,7 +827,6 @@ namespace EInfrastructure.Core.Redis
         /// <summary>
         /// 出栈
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="key"></param>
         /// <returns></returns>
         public async Task<string> ListLeftPopAsync(string key)
@@ -954,7 +949,6 @@ namespace EInfrastructure.Core.Redis
         /// <summary>
         /// 降序获取指定索引的集合
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="key"></param>
         /// <param name="fromRank"></param>
         /// <param name="toRank"></param>
@@ -984,7 +978,6 @@ namespace EInfrastructure.Core.Redis
         /// <summary>
         /// 获取指定索引的集合
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="key"></param>
         /// <param name="fromRank"></param>
         /// <param name="toRank"></param>

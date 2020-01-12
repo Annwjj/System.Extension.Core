@@ -14,6 +14,11 @@ namespace EInfrastructure.Core.UCloud.Storage
     /// </summary>
     public class PictureService : BaseStorageProvider, IPictureService, ISingleInstance
     {
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="logService"></param>
+        /// <param name="uCloudConfig"></param>
         public PictureService(ILogService logService, UCloudStorageConfig uCloudConfig) : base(logService,
             uCloudConfig)
         {

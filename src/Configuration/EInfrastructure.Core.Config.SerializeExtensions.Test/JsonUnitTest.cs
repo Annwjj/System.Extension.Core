@@ -10,8 +10,9 @@ namespace EInfrastructure.Core.Config.SerializeExtensions.Test
     /// </summary>
     public class JsonUnitTest
     {
-
-
+        /// <summary>
+        ///
+        /// </summary>
         [Fact]
         public void Serializer()
         {

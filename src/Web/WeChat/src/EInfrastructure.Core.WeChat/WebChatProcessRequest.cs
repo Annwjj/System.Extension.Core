@@ -24,6 +24,11 @@ namespace EInfrastructure.Core.WeChat
         private readonly ILogService _logService;
         private readonly IJsonService _jsonProvider;
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="logService"></param>
+        /// <param name="jsonProvider"></param>
         public WebChatProcessRequest(ILogService logService, IJsonService jsonProvider)
         {
             _logService = logService;
