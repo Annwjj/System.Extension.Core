@@ -4,7 +4,6 @@
 using System;
 using System.IO;
 using System.Security.Cryptography;
-using System.Text;
 using EInfrastructure.Core.Config.EnumerationExtensions;
 using EInfrastructure.Core.Tools;
 using Microsoft.AspNetCore.Http;
@@ -141,23 +140,23 @@ namespace EInfrastructure.Core.HelpCommon.Files
             string conditionCode = "";
             if (encryptType != null)
             {
-                if (encryptType.Id == EncryptType.Md5.Id)
+                if (encryptType.Equals(EncryptType.Md5))
                 {
                     conditionCode = GetMd5(formFile);
                 }
-                else if (encryptType.Id == EncryptType.Sha1.Id)
+                else if (encryptType.Equals(EncryptType.Sha1))
                 {
                     conditionCode = GetSha1(formFile);
                 }
-                else if (encryptType.Id == EncryptType.Sha256.Id)
+                else if (encryptType.Equals(EncryptType.Sha256))
                 {
                     conditionCode = GetSha256(formFile);
                 }
-                else if (encryptType.Id == EncryptType.Sha384.Id)
+                else if (encryptType.Equals(EncryptType.Sha384))
                 {
                     conditionCode = GetSha384(formFile);
                 }
-                else if (encryptType.Id == EncryptType.Sha512.Id)
+                else if (encryptType.Equals(EncryptType.Sha512))
                 {
                     conditionCode = GetSha512(formFile);
                 }

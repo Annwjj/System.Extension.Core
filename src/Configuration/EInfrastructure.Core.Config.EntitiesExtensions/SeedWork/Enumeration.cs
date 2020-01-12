@@ -10,6 +10,11 @@ namespace EInfrastructure.Core.Config.EntitiesExtensions.SeedWork
     /// </summary>
     public abstract class Enumeration : Enumeration<int, string>
     {
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
         protected Enumeration(int id, string name) : base(id, name)
         {
         }

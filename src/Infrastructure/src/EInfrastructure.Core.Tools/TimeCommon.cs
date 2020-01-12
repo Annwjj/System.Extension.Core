@@ -7,7 +7,6 @@ using System.Globalization;
 using System.Linq;
 using EInfrastructure.Core.Config.EnumerationExtensions;
 using EInfrastructure.Core.Config.ExceptionExtensions;
-using TimeType = EInfrastructure.Core.Config.EnumerationExtensions.TimeType;
 
 namespace EInfrastructure.Core.Tools
 {
@@ -334,45 +333,45 @@ namespace EInfrastructure.Core.Tools
         public static DateTime Get(this DateTime? dateTime, TimeType timeKey)
         {
             DateTime dateNow = dateTime ?? DateTime.Now.Date; //当前时间
-            if (timeKey == TimeType.StartYear)
+            if (timeKey.Equals(TimeType.StartYear))
             {
                 return new DateTime(dateNow.Year, 1, 1); //本年年初
             }
 
-            if (timeKey == TimeType.EndYear)
+            if (timeKey.Equals(TimeType.EndYear))
             {
                 return new DateTime(dateNow.Year, 12, 31); //本年年末
             }
 
-            if (timeKey == TimeType.StartQuarter)
+            if (timeKey.Equals(TimeType.StartQuarter))
             {
                 return dateNow.AddMonths(0 - (dateNow.Month - 1) % 3).AddDays(1 - dateNow.Day); //本季度初;
             }
 
-            if (timeKey == TimeType.EndQuarter)
+            if (timeKey.Equals(TimeType.EndQuarter))
             {
                 return dateNow.AddMonths(0 - (dateNow.Month - 1) % 3).AddDays(1 - dateNow.Day).AddMonths(3)
                     .AddDays(-1); //本季度末
             }
 
-            if (timeKey == TimeType.StartMonth)
+            if (timeKey.Equals(TimeType.StartMonth))
             {
                 return dateNow.AddDays(1 - dateNow.Day); //本月月初
             }
 
-            if (timeKey == TimeType.EndMonth)
+            if (timeKey.Equals(TimeType.EndMonth))
             {
                 return dateNow.AddDays(1 - dateNow.Day).AddMonths(1).AddDays(-1); //本月月末
             }
 
-            if (timeKey == TimeType.StartWeek)
+            if (timeKey.Equals(TimeType.StartWeek))
             {
                 int count = dateNow.DayOfWeek - DayOfWeek.Monday;
                 if (count == -1) count = 6;
                 return new DateTime(dateNow.Year, dateNow.Month, dateNow.Day).AddDays(-count); //本周周一
             }
 
-            if (timeKey == TimeType.EndWeek)
+            if (timeKey.Equals(TimeType.EndWeek))
             {
                 int count = dateNow.DayOfWeek - DayOfWeek.Sunday;
                 if (count != 0) count = 7 - count;
@@ -775,8 +774,8 @@ namespace EInfrastructure.Core.Tools
         /// <param name="year">阴历年</param>
         /// <param name="month">阴历月</param>
         /// <param name="day">阴历日</param>
-        /// <param name="IsLeapMonth">是否闰月</param>
-        private static DateTime GetLunarYearDate(int year, int month, int day, bool IsLeapMonth)
+        /// <param name="isLeapMonth">是否闰月</param>
+        private static DateTime GetLunarYearDate(int year, int month, int day, bool isLeapMonth)
         {
             if (year < 1902 || year > 2100)
                 throw new BusinessException("只支持1902～2100期间的农历年");
@@ -789,7 +788,7 @@ namespace EInfrastructure.Core.Tools
             int num1 = 0, num2 = 0;
             int leapMonth = calendar.GetLeapMonth(year);
 
-            if (((leapMonth == month + 1) && IsLeapMonth) || (leapMonth > 0 && leapMonth <= month))
+            if (((leapMonth == month + 1) && isLeapMonth) || (leapMonth > 0 && leapMonth <= month))
                 num2 = month;
             else
                 num2 = month - 1;
@@ -954,7 +953,8 @@ namespace EInfrastructure.Core.Tools
         /// <returns></returns>
         public static long CurrentTimeMillis(this DateTime target, DateTimeKind dateTimeKind = DateTimeKind.Utc)
         {
-            return (long) (TimeZoneInfo.ConvertTimeToUtc(target) - new DateTime(1970, 1, 1, 0, 0, 0, dateTimeKind)).TotalSeconds;
+            return (long) (TimeZoneInfo.ConvertTimeToUtc(target) - new DateTime(1970, 1, 1, 0, 0, 0, dateTimeKind))
+                .TotalSeconds;
         }
 
         #endregion
@@ -970,7 +970,7 @@ namespace EInfrastructure.Core.Tools
         public static long ToUnixTimestamp(this DateTime target, DateTimeKind dateTimeKind = DateTimeKind.Utc)
         {
             return (TimeZoneInfo.ConvertTimeToUtc(target) -
-                                    new DateTime(1970, 1, 1, 0, 0, 0, 0, dateTimeKind)).TotalMilliseconds.ConvertToLong(0);
+                    new DateTime(1970, 1, 1, 0, 0, 0, 0, dateTimeKind)).TotalMilliseconds.ConvertToLong(0);
         }
 
         #endregion

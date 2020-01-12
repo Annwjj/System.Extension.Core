@@ -157,6 +157,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EInfrastructure.Core.Config
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EInfrastructure.Core.Configuration", "src\Configuration\EInfrastructure.Core.Configuration\EInfrastructure.Core.Configuration.csproj", "{0B605034-4A35-4C8E-8CFF-191DD4DF3BBD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentications", "Authentications", "{B4AEADB8-FDD9-43CF-A9AC-09463BA9E0D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EInfrastructure.Jwt", "src\Authentications\EInfrastructure.Jwt\EInfrastructure.Jwt.csproj", "{F1BD6A4D-4177-4A19-A77A-2C9781D971CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -351,6 +355,10 @@ Global
 		{0B605034-4A35-4C8E-8CFF-191DD4DF3BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B605034-4A35-4C8E-8CFF-191DD4DF3BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B605034-4A35-4C8E-8CFF-191DD4DF3BBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1BD6A4D-4177-4A19-A77A-2C9781D971CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1BD6A4D-4177-4A19-A77A-2C9781D971CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1BD6A4D-4177-4A19-A77A-2C9781D971CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1BD6A4D-4177-4A19-A77A-2C9781D971CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -417,6 +425,7 @@ Global
 		{13279F9A-0570-4A31-BD98-4B1AFF3374BE} = {880442AE-448F-4B72-AFAD-EE41074B2B39}
 		{66DBD877-0BC5-407F-8FA6-DEDD575D594B} = {880442AE-448F-4B72-AFAD-EE41074B2B39}
 		{0B605034-4A35-4C8E-8CFF-191DD4DF3BBD} = {24632C62-A403-4004-A8D2-DEE348E2917B}
+		{F1BD6A4D-4177-4A19-A77A-2C9781D971CA} = {B4AEADB8-FDD9-43CF-A9AC-09463BA9E0D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {474DA97F-4548-4B18-8AB9-44B6CCC66B6D}

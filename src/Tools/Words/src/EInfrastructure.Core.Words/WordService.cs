@@ -187,10 +187,9 @@ namespace EInfrastructure.Core.Words
         /// <returns></returns>
         public bool IsExist(string text, int[] unicodeRange)
         {
-            for (int i = 0; i < text.Length; i++)
+            foreach (var c in text)
             {
-                var c = text[i];
-                if ((c >= unicodeRange[0] && c <= unicodeRange[1]))
+                if (c >= unicodeRange[0] && c <= unicodeRange[1])
                 {
                     return true;
                 }
@@ -228,7 +227,7 @@ namespace EInfrastructure.Core.Words
         /// <returns></returns>
         public bool IsExist(string text, TextTypes textType)
         {
-            if (textType.Id == TextTypes.Simplified.Id || textType.Id == TextTypes.Traditional.Id)
+            if (textType.Equals(TextTypes.Simplified) || textType.Equals(TextTypes.Traditional))
             {
                 return IsExist(text, new List<WordType>()
                 {
@@ -237,7 +236,7 @@ namespace EInfrastructure.Core.Words
                 });
             }
 
-            if (textType.Id == TextTypes.Japanese.Id)
+            if (textType.Equals(TextTypes.Japanese))
             {
                 return IsExist(text, new List<WordType>()
                 {
@@ -355,7 +354,7 @@ namespace EInfrastructure.Core.Words
 
         #endregion
 
-        #region  中文转数字（支持中文大写）
+        #region 中文转数字（支持中文大写）
 
         /// <summary>
         /// 中文转数字（支持中文大写）
