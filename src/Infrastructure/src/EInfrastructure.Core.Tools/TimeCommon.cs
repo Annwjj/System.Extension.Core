@@ -332,7 +332,7 @@ namespace EInfrastructure.Core.Tools
         /// <returns></returns>
         public static DateTime Get(this DateTime? dateTime, TimeType timeKey)
         {
-            DateTime dateNow = dateTime ?? DateTime.Now.Date; //当前时间
+            DateTime dateNow = (dateTime ?? DateTime.Now).Date; //当前时间
             if (timeKey.Equals(TimeType.StartYear))
             {
                 return new DateTime(dateNow.Year, 1, 1); //本年年初
@@ -340,7 +340,7 @@ namespace EInfrastructure.Core.Tools
 
             if (timeKey.Equals(TimeType.EndYear))
             {
-                return new DateTime(dateNow.Year, 12, 31); //本年年末
+                return new DateTime(dateNow.Year, 12, 31, 23, 59, 59); //本年年末
             }
 
             if (timeKey.Equals(TimeType.StartQuarter))
@@ -350,8 +350,9 @@ namespace EInfrastructure.Core.Tools
 
             if (timeKey.Equals(TimeType.EndQuarter))
             {
-                return dateNow.AddMonths(0 - (dateNow.Month - 1) % 3).AddDays(1 - dateNow.Day).AddMonths(3)
+                var time = dateNow.AddMonths(0 - (dateNow.Month - 1) % 3).AddDays(1 - dateNow.Day).AddMonths(3)
                     .AddDays(-1); //本季度末
+                return new DateTime(time.Year, time.Month, time.Day, 23, 59, 59);
             }
 
             if (timeKey.Equals(TimeType.StartMonth))
@@ -361,7 +362,8 @@ namespace EInfrastructure.Core.Tools
 
             if (timeKey.Equals(TimeType.EndMonth))
             {
-                return dateNow.AddDays(1 - dateNow.Day).AddMonths(1).AddDays(-1); //本月月末
+                var time = dateNow.AddDays(1 - dateNow.Day).AddMonths(1).AddDays(-1); //本月月末
+                return new DateTime(time.Year, time.Month, time.Day, 23, 59, 59);
             }
 
             if (timeKey.Equals(TimeType.StartWeek))
@@ -376,7 +378,8 @@ namespace EInfrastructure.Core.Tools
                 int count = dateNow.DayOfWeek - DayOfWeek.Sunday;
                 if (count != 0) count = 7 - count;
 
-                return new DateTime(dateNow.Year, dateNow.Month, dateNow.Day).AddDays(count); //本周周日
+                var time = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day).AddDays(count); //本周周日
+                return new DateTime(time.Year, time.Month, time.Day, 23, 59, 59);
             }
 
             return dateNow;

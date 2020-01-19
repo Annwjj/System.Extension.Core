@@ -193,6 +193,8 @@ namespace EInfrastructure.Core.Test
             result = TimeCommon.Get(DateTime.Parse(time), TimeType.EndWeek);
             result = TimeCommon.Get(DateTime.Parse(time), TimeType.StartQuarter);
             result = TimeCommon.Get(DateTime.Parse(time), TimeType.EndQuarter);
+            result = TimeCommon.Get(DateTime.Parse(time), TimeType.StartMonth);
+            result = TimeCommon.Get(DateTime.Parse(time), TimeType.EndMonth);
         }
     }
 }
