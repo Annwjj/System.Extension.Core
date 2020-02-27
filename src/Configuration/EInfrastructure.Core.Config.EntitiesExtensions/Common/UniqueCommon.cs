@@ -6,7 +6,7 @@ namespace EInfrastructure.Core.Config.EntitiesExtensions.Common
     /// <summary>
     /// 唯一方法实现
     /// </summary>
-    public static class UniqueCommon
+    internal static class UniqueCommon
     {
         #region 重写HashCode方法
 
